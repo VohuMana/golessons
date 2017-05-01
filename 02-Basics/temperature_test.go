@@ -83,3 +83,19 @@ func TestCelsiusToFahrenheit_BoilingTemp(t *testing.T) {
 
 	compareExpectedAndReturnedTemp(expectedF, returnedF, t)
 }
+
+func TestFahrenheitToCelsius_ConvertBack(t *testing.T) {
+	inputC := 79.0
+	expectedC := inputC
+	returnedC := FahrenheitToCelsius(CelsiusToFahrenheit(inputC))
+
+	compareExpectedAndReturnedTemp(expectedC, returnedC, t)
+}
+
+func TestCelsiusToFahrenheit_ConvertBack(t *testing.T) {
+	inputF := 92.0
+	expectedF := inputF
+	returnedF := CelsiusToFahrenheit(FahrenheitToCelsius(inputF))
+
+	compareExpectedAndReturnedTemp(expectedF, returnedF, t)
+}
